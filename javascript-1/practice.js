@@ -4,11 +4,15 @@
 
 // Code here
 
+let myName = 'Cameron';
+
 //////////////////PROBLEM 2////////////////////
 
 // Create a variable called 'faveNum' with a value that is your favorite number. 
 
 //Code here
+
+let faveNum = 27;
 
 //////////////////PROBLEM 3////////////////////
 
@@ -16,11 +20,17 @@
 
 //Code here
 
+let lovesCode = true;
+
 //////////////////PROBLEM 4////////////////////
 
 // Create a function called 'sum' that takes in two parameters, 'num1' and 'num2'. The function should return the sum of the two parameters.
 
 //Code here
+
+function sum(num1, num2) {
+	return num1 + num2;
+}
 
 //////////////////PROBLEM 5////////////////////
 
@@ -28,17 +38,39 @@
 
 //Code here
 
+function lovesCodeChecker(x) {
+	if (x === true) {
+		return true;
+	}
+	else if (x != true) {
+		return false;
+	}
+}
+
 //////////////////PROBLEM 6////////////////////
 
 // Create a function called 'oddChecker' that takes in one parameter, 'num'. Your function should check to see if the parameter is even or odd. If the parameter is odd, return 'the number is odd'. If the number is even, return 'the number is even'.
 
 //Code here
 
+function oddChecker(num) {
+	if (num % 2 === 0) {
+		return 'the number is even';
+	}
+	else if (num % 2 != 0) {
+		return 'the number is odd';
+	}
+}
+
 //////////////////PROBLEM 7////////////////////
 
 // Create a function called 'iLove' that takes in two string parameters, 'name' and 'love'. Have the function take the two parameters and return a string that says "NAMEPARAM loves LOVEPARAM" with the appropriate parameters in the string. e.g. "Joseph loves music"
 
 //Code Here
+
+function iLove(name, love) {
+	return `${name} loves ${love}`;
+}
 
 //////////////////PROBLEM 8////////////////////
 
@@ -47,11 +79,15 @@ const faveColors = ['red', 'green', 'black']
 
 //Code Here
 
+const colorCopy = faveColors.slice();
+
 //////////////////PROBLEM 9////////////////////
 
 // Add a fourth color to the end of the 'colorCopy' array using push.
 
 //Code Here
+
+colorCopy.push('blue');
 
 //////////////////PROBLEM 10////////////////////
 
@@ -60,11 +96,24 @@ const numbers = [1, 2, 3, 4, 5]
 
 //Code Here
 
+let middleNums = numbers.slice(1, 4);
+
 //////////////////PROBLEM 11////////////////////
 
 // Create an object called 'me' that has the following keys: firstName, state, age, and greeter. The value of the firstName key should be your name as a string. The value of the property state should be your current state or providence of residence as a string. The value of age should be your age as a number. greeter should be a method that returns the string 'Hello! My name is NAMEVALUE and I live in STATEVALUE' with the corresponding values. 
 
 //Code Here
+
+let me = {
+	firstName: 'Cameron',
+	state: 'Utah',
+	age: 23,
+	greeter: function() {
+		return `Hello! My name is ${this.firstName} and I live in ${this.state}`;
+	}
+}
+
+// It autofilled this._____ I swear. I don't actually know what this is really.
 
 //////////////////PROBLEM 12////////////////////
 
@@ -72,11 +121,32 @@ const numbers = [1, 2, 3, 4, 5]
 
 // Code here
 
+function bigOrSmall(arr) {
+	let answers = [];
+	for(x = 0; x < arr.length; x++) {
+		if (arr[x] > 100) {
+			answers.push('big');
+		}
+		else if (arr[x] <= 100) {
+			answers.push('small');
+		}
+	}
+	return answers;
+}
+
 //////////////////PROBLEM 13////////////////////
 
 // Create a function called 'arrayReverser' that takes in one parameter, 'arr'. Inside of arrayReverser, create an empty array called 'reversed'. Using a for loop, loop over the passed in array IN REVERSE (this means your counter should decrement), and then add each item to the 'reversed' array variable you created. Finally, return the 'reversed' array variable. 
 
 //Code Here
+
+function arrayReverser(arr) {
+	let reversed = [];
+	for(x = arr.length - 1; x >= 0; x--) {
+		reversed.push(arr[x]);
+	}
+	return reversed;
+}
 
 //////////////////PROBLEM 14 - 18 Setup////////////////////
 
@@ -90,11 +160,20 @@ const myNumbers = [3, 55, 788, 2, 1]
 
 // Code Here
 
+// console.log(myNumbers);
+let doubled = myNumbers.map(function(curr){
+	return curr * 2;
+});
+// console.log(doubled);
+
 //////////////////PROBLEM 15////////////////////
 
 // Now, use .filter to create a new array containing any numbers that are greater than 100. Call the new array 'filtered'. 
 
 // Code Here
+
+// I learned while figuring out the last one that I could do something like this. Looked up .map on MDN when I had a problem and it had an arrow function that did the same thing so rather than copy pasting it for my last answer I decided to try it here and it worked!
+let filtered = myNumbers.filter(x => x > 100);
 
 //////////////////PROBLEM 16////////////////////
 
@@ -102,11 +181,20 @@ const myNumbers = [3, 55, 788, 2, 1]
 
 // Code Here
 
+let total = myNumbers.reduce(function(accumulator, current){
+	return accumulator + current;
+});
+
 //////////////////PROBLEM 17////////////////////
 
 // Finally, use .forEach to find the index of each item in the array. To begin, create an empty array called 'myNumbersIndex'. Then, use forEach to push each item's index from the myNumbers array into the newly created myNumbersIndex array. 
 
 // Code Here
+
+let myNumbersIndex = [];
+myNumbers.forEach(function(current, x){
+	return myNumbersIndex.push(x);
+});
 
 //////////////////PROBLEM 18////////////////////
 
@@ -114,6 +202,8 @@ const myNumbers = [3, 55, 788, 2, 1]
 const notGeorge = ['Louis', 'Ted', 'Bill', 'Sharon', 'Mark', 'Angela']
 
 // Code Here
+
+let forTheLoveOfGeorge = notGeorge.map(element => element = 'George');
 
 //////////////////PROBLEM 19////////////////////
 
@@ -129,8 +219,18 @@ const people = [
 
 // Code Here
 
+let enemies = people.filter(function(element) {
+	if (element.friend != true) {
+		return element;
+	}
+})
+
 //////////////////PROBLEM 20////////////////////
 
 // Using the people array above, get a total of the awesomeLevel from all the people, and store that value in a variable named 'totallyAwesome'. Use .reduce().
 
 // Code Here
+
+let totallyAwesome = people.reduce(function(accumulator, current){
+	return accumulator + current.awesomeLevel;
+}, 0);
