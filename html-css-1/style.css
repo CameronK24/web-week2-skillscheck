@@ -39,13 +39,62 @@ header nav {
 }
 
 #section2 {
-    background-color: lightgray;
     width: 100vw;
-    height: 80vh;
+    height: 110vh;
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
 }
 
 #boxes1 {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 60px;
+}
 
+#boxes1 li {
+    background-color: lightgreen;
+    width: 20%;
+    height: 275px;
+    border-radius: 7%;
+}
+
+#boxes2 {
+    width: 72%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+#boxes2 li {
+    background-color: rgb(250, 182, 54);
+    width: 47%;
+    height: 275px;    
+}
+
+#section2 div {
+    width: 65%;
+    height: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+#section2 div p {
+    width: 40%;
+}
+
+#section2 div img {
+    width: 33%;
+    height: 200px;
+}
+
+footer {
+    background-color: rgb(47, 40, 59);
+    width: 100vw;
+    height: 15vh;
 }
